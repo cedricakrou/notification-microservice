@@ -1,13 +1,13 @@
 {
   "name": "notification-microservice",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Documentation of notification microservice APIs. It includes email and sms endpoint.",
+  "author": "Cedric Akrou",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \\\\\\\"main/src/**/*.ts\\\\\\\" \\\\\\\"main/test/**/*.ts\\\\\\\"",
+    "format": "prettier --write \\\\\\\\\\\\\\\"api-gateway/src/**/*.ts\\\\\\\\\\\\\\\" \\\\\\\\\\\\\\\"main/test/**/*.ts\\\\\\\\\\\\\\\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -17,12 +17,14 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config main/test/jest-e2e.json"
+    "test:e2e": "jest --config api-gateway/test/jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
+    "@nestjs/cqrs": "^9.0.3",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/swagger": "^6.2.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
@@ -55,7 +57,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": "api-gateway/src",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
